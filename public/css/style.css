@@ -1,8 +1,31 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
 }
-
-a {
-  color: #00B7FF;
+.chat {
+    height:100%;
+    width:100%;
+    margin-top: 51px;
+    margin-left:0px;
+    margin-right:0px;
+}
+.input-field {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    padding: 15px 15px 0px 15px;
+}
+.row.message {
+    padding: 10px;
+}
+.userAvatar {
+    height: 100px;
+    width: auto;
+    position: relative;
+    font-size: 100px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: transparent;
 }
