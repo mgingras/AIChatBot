@@ -1,0 +1,24 @@
+{
+  "name": "ChatBot",
+  "version": "1.0.0",
+  "description": "AI that can learn words",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "AI",
+    "Chat",
+    "Learning"
+  ],
+  "author": "Martin Gingras",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mgingras/AIChatBot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mgingras/AIChatBot/issues"
+  },
+  "homepage": "https://github.com/mgingras/AIChatBot"
+}
