@@ -5,28 +5,24 @@ block content
     .container
       .navbar-header
         a.navbar-brand(href='#') ChatBot
-  .row.chat
-      .col-xs-12
-        .row.message
-          .col-xs-10
-            img.userAvatar.pull-left(src="/img/chatbot.png", alt="")
-            h4 ChatBot
-              .small 6:11pm
-            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              | consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              | cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        .row.message
-          .col-xs-10.col-xs-offset-2
-            i.userAvatar.avatar.avatar-color-33.avatar-plain.pull-right.avatar-letter-u
-            h4.pull-right Username
-              .small 6:11pm
-            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              | consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              | cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  #chat.row.chat.col-xs-12
+    .row.message
+      .col-xs-10
+        img.userAvatar.pull-left(src='/img/chatbot.png', alt='C', style="float:left;")
+        h4.pull-left(style="float:left;")
+          | ChatBot 
+          .small 2:41 PM
+        p.pull-left(style='margin-left:20px;margin-top:20px;') Welcome to ChatBot. Let's chat!!
+        //- .row.message
+        //-   .col-xs-10.col-xs-offset-2
+        //-     i.userAvatar.avatar.avatar-color-33.avatar-plain.pull-right.avatar-letter-u
+        //-     h4.pull-right Username
+        //-       .small 6:11pm
+        //-     p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        //-       | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        //-       | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        //-       | consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        //-       | cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 
   .input-field
     form(role='form')
