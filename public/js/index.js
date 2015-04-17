@@ -13,18 +13,26 @@ $(function() {
     if (e.keyCode === 13) {
       e.preventDefault();
       sendMessage();
-    };
+    }
   });
 });
 
+/**
+ * Send a message to the chatbot to figure out how to respond to
+ * @return {[type]} [description]
+ */
 function sendMessage() {
   var msg = $('#message').val();
   $('#message').val('');
   say(msg);
-  chatbot.say(msg);
+  chatbot.respond(msg);
   $('#chat').scrollTop($('#chat')[0].scrollHeight);
 }
 
+/**
+ * Prints message as visitor to chatroom
+ * @param  {String} text Message to print
+ */
 function say(text) {
   var msg = ''+
     '<div class="row message">'+
