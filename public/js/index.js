@@ -25,8 +25,7 @@ function sendMessage() {
   var msg = $('#message').val();
   $('#message').val('');
   say(msg);
-  chatbot.respond(msg);
-  $('#chat').scrollTop($('#chat')[0].scrollHeight);
+  chatbot.chat(msg);
 }
 
 /**
