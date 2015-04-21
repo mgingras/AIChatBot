@@ -336,6 +336,9 @@ function insertKnowledge(key, knowledge, callback) {
 
 function arrayToSentence(arr, pluralize){
   var res;
+  if(_.isArray(arr) && arr.length === 0){
+    return '';
+  }
   if(pluralize){
     if(!_.isArray(arr)){
       return inflect.pluralize(arr);
@@ -348,7 +351,7 @@ function arrayToSentence(arr, pluralize){
       for (var j = arr.length - 2; j >= 0; j--) {
         res += inflect.pluralize(arr[j]) + ', ';
       }
-      res += 'and ' + inflect.pluralize(arr[arr.length - 1]);
+      res += ' and ' + inflect.pluralize(arr[arr.length - 1]);
       return res;
     }
   } else {
