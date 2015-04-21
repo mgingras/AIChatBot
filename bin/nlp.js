@@ -1,4 +1,5 @@
 var request = require('request');
+
 var nlp = {
   parseText: function(text, callback){
     if (text.length >250){
