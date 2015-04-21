@@ -44,5 +44,6 @@ function say(text) {
       '</div>'+
     '</div>';
   $('.chat').append(msg);
+  $('#chat').scrollTop($('#chat')[0].scrollHeight);
 }
 
