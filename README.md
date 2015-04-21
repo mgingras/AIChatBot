@@ -1,6 +1,20 @@
 # AIChatBot
 Chat bot that can learn words
 
+#Steps
+1. Install NodeJS
+  - https://nodejs.org/download/
+2. Install CouchDB and start it
+  - http://couchdb.apache.org/
+  - Start CouchDB on port 5984: `couchdb -b`
+3. Copy source code git clone
+  - `git clone https://github.com/mgingras/AIChatBot`
+4. Move into source code directory and install dependencies
+  - `cd AIChatBot && npm install`
+5. Start NodeJS app
+  - `npm start`
+6. Navigate to localhost:3000 in a browser.
+
 #Creds:
 NLP POS Tagging: [http://nlp.naturalparsing.com/](http://nlp.naturalparsing.com/)
 
