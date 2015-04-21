@@ -115,6 +115,11 @@ var bot = {
   respond: function(key, subkey, context, callback) {
     // Lookup the key and subkey
     if(key && subkey){
+      if((key === 'day' || key === 'date') && subkey === 'is'){
+        return callback('The date is ' + new Date().toDateString());
+      } else if(key === 'time' && subkey === 'is'){
+        return callback('It is ' + new Date().toTimeString().substr(0, 9));
+      }
       knowledgeLookup(key, function(kbRes) {
         console.dir(kbRes);
         if(kbRes === 'None'){
@@ -208,7 +213,7 @@ var bot = {
         }
       });
     } else if(!key && subkey){
-
+      return callback('Sorry you\'ve confused me...');
     } else {
       return callback('Sorry you\'ve confused me..');
     }

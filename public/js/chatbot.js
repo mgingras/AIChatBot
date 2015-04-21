@@ -106,7 +106,18 @@ ChatBot.prototype.learn = function(toLearn, msg) {
     if(toLearn.knows && toLearn.knows._id === toLearn.subkey){
       // If we know and the know matches the id of the subkey we are associating...
       chatbot.learning.context = 'is';
-      var association = toLearn.knows.is.split(' ').length === 1 ? toLearn.knows.is : 'is';
+      var association;
+      if(_.isArray(toLearn.knows.is)){
+        var _i, is = false;
+        for(_i in toLearn.knows.is){
+          if(toLearn.knows.is[_i].split(' ').length !== 1){
+            is = true;
+          }
+        }
+        association = is ? 'is' : toLearn.knows.is[0];
+      } else {
+       association = toLearn.knows.is.split(' ').length === 1 ? toLearn.knows.is : 'is';
+      }
       data[association] = toLearn.subkey;
       learn(data);
 
@@ -136,7 +147,18 @@ ChatBot.prototype.learn = function(toLearn, msg) {
         if(knows && knows._id === toLearn.subkey){
           console.dir(toLearn);
           // We did some jiggleing client side so the knows object was fucked,
-          var association = knows.is.split(' ').length === 1 ? knows.is : 'is';
+          var association;
+          if(_.isArray(knows.is)){
+            var _i, is = false;
+            for(_i in knows.is){
+              if(knows.is[_i].split(' ').length !== 1){
+                is = true;
+              }
+            }
+            association = is ? 'is' : knows.is[0];
+          } else {
+           association = knows.is.split(' ').length === 1 ? knows.is : 'is';
+          }
           if(toLearn.knows._id === this.learning.s && _.contains(toLearn.knows.is, knows.is)){
             association = 'is';
           }
@@ -188,6 +210,7 @@ function learn(learnData){
       chatbot.parse(next.msg);
     } else if(!next){
       chatbot.say('Can you teach me anything else about ' + chatbot.learning.s + '?');
+      chatbot.prompt = true;
     }
   });
 }
